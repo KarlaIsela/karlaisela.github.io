@@ -1,0 +1,26 @@
+p{
+
+    background-color: rgb(233, 166, 255);
+}
+
+header{
+    background-color: #333;
+    color : white;
+}
+
+a{
+    color: white;
+}
+
+nav ul li{
+    list-style-type: none; 
+    display: inline;
+    text-decoration: none;
+}
+
+li{
+    padding: 50px;
+    text-decoration: none;
+}
+
+
