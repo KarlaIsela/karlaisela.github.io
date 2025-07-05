@@ -1,0 +1,230 @@
+/* ===================
+   Reset y base general
+   =================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cinzel', 'Georgia', serif;
+  margin: 0;
+  padding: 0;
+  color: #ffe6fa;
+  background: linear-gradient(180deg, #1a002a 0%, #0d0017 100%);
+  overflow-x: hidden;
+  position: relative;
+  transition: background 1s ease;
+  background-image:
+    linear-gradient(180deg, #1a002a 0%, #0d0017 100%),
+    url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"%3E%3Cstyle%3Epath{fill:%23aa00ff;opacity:0.06}%3C/style%3E%3Cpath d="M50 10L60 40H90L65 60L75 90L50 70L25 90L35 60L10 40H40Z" /%3E%3C/svg%3E');
+  background-repeat: repeat;
+  background-size: cover, 60px 60px;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* ===============
+   Contenedor main
+   =============== */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 4em;
+  background: rgba(10, 0, 20, 0.75);
+  border: 2px solid #800080;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 35px rgba(170, 0, 255, 0.3);
+  z-index: 1;
+  position: relative;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================
+   Estrellas animadas
+   ================== */
+.star-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.star {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  font-size: 0.95em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 0 3px black;
+
+
+
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath d="M50 10L60 40H90L65 60L75 90L50 70L25 90L35 60L10 40H40Z" fill="%23ff69b4" opacity="0.9"/%3E%3C/svg%3E') no-repeat center;
+
+
+
+  background-size: contain;
+  border: none;
+  filter: drop-shadow(0 0 8px #ff69b4);
+  cursor: pointer;
+  animation: float 5s ease-in-out infinite;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.star:hover {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 0 14px #ffc0cb);
+}
+
+.star.parpadeando {
+  animation: blink 1s ease-in-out forwards, float 4s ease-in-out infinite;
+}
+.star.activa {
+  animation: blink2 1s ease-in-out infinite, float 4s ease-in-out infinite;
+}
+
+/* ============================
+   Animaciones de las entrellas
+   ============================ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes blink {
+  0%, 100% { filter: drop-shadow(0 0 6px #ffeaac); opacity: 1; }
+  50% { filter: drop-shadow(0 0 12px #f4dc02f0); opacity: 0.6; }
+}
+@keyframes blink2 {
+  0%, 100% { filter: drop-shadow(0 0 6px white); opacity: 1; }
+  50% { filter: drop-shadow(0 0 12px cyan); opacity: 0.5; }
+}
+@keyframes twinkle {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.1); filter: brightness(1.5); }
+}
+
+
+/* ==================
+   Cartas flotantes
+   ================== */
+.card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: rgba(10, 0, 20, 0.7);
+  backdrop-filter: blur(15px);
+  border: 2px solid #aa00ff;
+  border-radius: 25px;
+  padding: 2em;
+  max-width: 600px;
+  width: 90%;
+  z-index: 100;
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  box-shadow: 0 0 40px rgba(255, 105, 180, 0.4);
+  color: #fceeff;
+  font-family: 'Cinzel', serif;
+}
+
+.card.visible {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* ==================
+   Botón cerrar
+   ================== */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.close-btn:hover {
+  background: #ffd700;
+  transform: scale(1.1);
+}
+
+/* ==================
+   Luna central
+   ================== */
+.moon-download {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.moon-download {
+  font-size: 1.8em;
+  background: radial-gradient(circle, #4b0082 30%, #000 70%);
+  border: 2px solid #ffd700;
+  border-radius: 50%;
+  color: #fff;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px hotpink; }
+  50% { box-shadow: 0 0 20px #ffd700; }
+}
+
+.moon-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px #ff69b4;
+}
+
+/* ==================
+   Botón modo noche/día
+   ================== */
+.toggle-night {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  padding: 0.75em 1.8em;
+  font-size: 1.1em;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #4b0082, #ff69b4);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 5px rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: all 0.4s ease;
+} 
+.toggle-night:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #ff69b4;
+}
+.toggle-night:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 10px #ff69b4 inset;
+}
