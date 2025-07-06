@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Katty-Pong</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Katty-Pong</h1>
+  <canvas id="juego" width="700" height="500"></canvas>
+
+  <button class="btn-pausa" onclick="pausarJuego()">Pausar</button>
+  <button class="btn-reanudar" onclick="reanudarJuego()">Reanudar</button>
+  <button class="btn-reiniciar" onclick="reiniciarJuego()">Reiniciar</button>
+  
+  <div id="ventana" class="ventana oculto">
+    <div class="contenido-ventana">
+      <p id="mensaje-ventana"></p>
+      <button class="btn-volver" onclick="reiniciarJuego()">Volver a jugar</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  background-color: #fff0f5;
+  font-family: 'Comic Sans MS', cursive;
+  text-align: center;
+  color: #d63384;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+canvas {
+  background-color: #fce4ec;
+  border: 3px solid #ff69b4;
+  display: block;
+  margin: 0 auto;
+}
+
+.ventana {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.oculto {
+  display: none;
+}
+
+.contenido-ventana {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-family: 'Comic Sans MS', cursive;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s ease;
+  color: white;
+  text-shadow: 1px 2px 0.5px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón Pausar */
+.btn-pausa {
+  background-color: #ff62b4;
+  transition: all 0.3s ease;
+}
+
+.btn-pausa:hover {
+  background-color: #ff1e94;
+}
+
+.btn-pausa.active {
+  transform: scale(1.05);
+  background-color: #ff1e94;  /* color más fuerte cuando está activo */
+}
+
+/* Botón Reanudar */
+.btn-reanudar {
+  background-color: #ff81e3;
+  transition: all 0.3s ease;
+}
+
+.btn-reanudar:hover {
+  background-color: #865f9a;
+}
+
+.btn-reanudar:active {
+  transform: scale(0.75);
+}
+
+/* Botón Reiniciar */
+.btn-reiniciar {
+  background-color: #fc9fff;
+}
+
+.btn-reiniciar:hover {
+  background-color: #5f7a9a;  
+}
+
+.btn-reiniciar:active {
+  transform: scale(0.75);
+}
+
+/* Botón Volver a Jugar */
+.btn-volver {
+  background-color: #ff62b4;
+  transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #865f9a;
+}
